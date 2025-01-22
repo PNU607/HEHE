@@ -5,10 +5,22 @@ using TMPro;
 
 public class Index : MonoBehaviour
 {
+    public static Index Instance;
+
+    public int targetIndex;
     public TextMeshProUGUI textMeshPro;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         textMeshPro.text = "0";
+        targetIndex = 0;
     }
-
 }
