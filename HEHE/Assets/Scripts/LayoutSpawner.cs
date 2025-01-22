@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class LayoutSpawner : MonoBehaviour
 {
-    public GameObject buttonPrefab;
+    public List<GameObject> buttonPrefabs;
     public int gridSize = 3;
-    public int totalButtons;
-    public Transform parentTransform; //생성된 버튼이 배치될 부모 객체의 transform
+    private int totalButtons;
+    private List<int> gridData;
+
+    public Transform parentTransform;
 
     private void Start()
     {
         totalButtons = gridSize * gridSize;
+        gridData = new List<int>();
 
-    GridLayoutGroup gridLayoutGroup = parentTransform.GetComponent<GridLayoutGroup>();
+        GridLayoutGroup gridLayoutGroup = parentTransform.GetComponent<GridLayoutGroup>();
         gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
         gridLayoutGroup.constraintCount = gridSize;
 
@@ -26,13 +29,19 @@ public class LayoutSpawner : MonoBehaviour
 
     void SpawnGridButtons()
     {
+        gridData.Clear();
 
         for (int i=0; i<totalButtons; i++)
         {
-            GameObject newButton = Instantiate(buttonPrefab, parentTransform);
-            newButton.name = $"Button {i + 1}"; //$ : 문자열 보간
+            int randomIndex = Random.Range(0, buttonPrefabs.Count);
+            GameObject selectedPrefab = buttonPrefabs[randomIndex];
+
+            GameObject newButton = Instantiate(selectedPrefab, parentTransform);
+
+            gridData.Add(randomIndex);
         }
-        
+
+        Debug.Log("Grid Data: " + string.Join(", ", gridData));
     }
 
     private void Update()
