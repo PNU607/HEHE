@@ -34,7 +34,7 @@ public class LayoutSpawner : MonoBehaviour
         gridLayoutGroup.constraintCount = gridSize;
 
         RectTransform rectTransform = parentTransform.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(-100, 100);
+        rectTransform.anchoredPosition = new Vector2(-200, 150);
 
         SpawnGridData();
     }

@@ -5,16 +5,8 @@ using UnityEngine;
 
 public class Tomato : MonoBehaviour
 {
-    public static Tomato Instance;
     public Transform transfrom;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
     public IEnumerator VanishTomato()
     {
         Debug.Log("VanishTomato Start");

@@ -5,20 +5,10 @@ using UnityEngine.UI;
 
 public class Pop : MonoBehaviour
 {
-    public static Pop Instance;
-
     public bool isButtonClicked;
 
     public Sprite newSprite;
     private Image image;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
 
     private void Start()
     {
