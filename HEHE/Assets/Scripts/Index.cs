@@ -17,10 +17,4 @@ public class Index : MonoBehaviour
             Instance = this;
         }
     }
-
-    void Start()
-    {
-        textMeshPro.text = "0";
-        targetIndex = 0;
-    }
 }

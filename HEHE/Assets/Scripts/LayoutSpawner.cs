@@ -84,7 +84,7 @@ public class LayoutSpawner : MonoBehaviour
         if (isGrid)
         {
             SpawnGridButtons();
-            Debug.Log("Grid Data: " + string.Join(", ", gridData));
+            //Debug.Log("Grid Data: " + string.Join(", ", gridData));
         }
         else
         {
@@ -121,7 +121,7 @@ public class LayoutSpawner : MonoBehaviour
         randomgridData = Random.Range(0, buttonPrefabs.Count);
         int CountIndex = gridData.Count(x => x == randomgridData);
         IndexManager.Instance.count = CountIndex;
-        Debug.Log($"Count : {CountIndex}");
+        //Debug.Log($"Count : {CountIndex}");
         string indexColor = "";
         if (randomgridData == 0) indexColor = "Red";
         else if (randomgridData == 1) indexColor = "Green";

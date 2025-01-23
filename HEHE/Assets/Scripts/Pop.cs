@@ -7,6 +7,8 @@ public class Pop : MonoBehaviour
 {
     public static Pop Instance;
 
+    public bool isButtonClicked;
+
     public Sprite newSprite;
     private Image image;
 
@@ -21,23 +23,31 @@ public class Pop : MonoBehaviour
     private void Start()
     {
         image = GetComponent<Image>();
+        isButtonClicked = false;
     }
     public void OnButtonClick()
     {
-        image.sprite = newSprite;
-
-        Debug.Log("Click Test");
-
         ButtonIdentifier buttonIdentifier = this.GetComponent<ButtonIdentifier>();
         int buttonNum = buttonIdentifier.buttonIdentifierNum;
 
-        Debug.Log($"{buttonNum}");
+        //Debug.Log($"{buttonNum}");
 
         int _TargetIndex = Index.Instance.targetIndex;
 
-        if (buttonNum == _TargetIndex)
+        if ((buttonNum == _TargetIndex) && (isButtonClicked == false))
         {
+            Debug.Log("Good!");
+
+            image.sprite = newSprite;
+
             IndexManager.Instance.count--;
+
+            isButtonClicked = true;
+        }
+
+        else if ((buttonNum != _TargetIndex) || (isButtonClicked != false))
+        {
+            Debug.Log("Wrong!");
         }
     }
 }
