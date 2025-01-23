@@ -509,7 +509,7 @@ MonoBehaviour:
   - {fileID: 1842253401606929935, guid: 5744883e90742ed41a4d464c5b3e58d0, type: 3}
   - {fileID: 1842253401606929935, guid: 104e6d263f2973441b5a7dfda5935a19, type: 3}
   - {fileID: 1842253401606929935, guid: 97e577018f2f69b47982cc1fb61d826a, type: 3}
-  gridSize: 4
+  gridSize: 3
   randomgridData: 0
   parentTransform: {fileID: 577562506}
 --- !u!4 &1362079636
