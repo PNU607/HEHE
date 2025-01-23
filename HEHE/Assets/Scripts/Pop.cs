@@ -40,14 +40,23 @@ public class Pop : MonoBehaviour
 
             image.sprite = newSprite;
 
-            IndexManager.Instance.count--;
-
             isButtonClicked = true;
+
+            StartCoroutine(VanishUpdate());
+
+            //Destroy(gameObject);
         }
 
         else if ((buttonNum != _TargetIndex) || (isButtonClicked != false))
         {
             Debug.Log("Wrong!");
         }
+    }
+
+    public IEnumerator VanishUpdate()
+    {
+        Tomato tomato = this.GetComponent<Tomato>();
+        yield return StartCoroutine(tomato.VanishTomato());
+        IndexManager.Instance.count--;
     }
 }
