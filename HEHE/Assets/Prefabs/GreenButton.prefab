@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isButtonClicked: 0
-  newSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  newSprite: {fileID: 21300000, guid: ed4dcb31a8815594ab6ea81de21919c6, type: 3}
 --- !u!114 &7200405719952597968
 MonoBehaviour:
   m_ObjectHideFlags: 0
